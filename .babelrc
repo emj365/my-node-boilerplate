@@ -1,0 +1,4 @@
+{
+  "plugins": ["dynamic-import-node"],
+  "presets": ["env", "flow"]
+}

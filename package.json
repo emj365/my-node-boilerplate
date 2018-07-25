@@ -1,0 +1,37 @@
+{
+  "name": "",
+  "description": "",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "license": "MIT",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build:clean": "rimraf ./dist",
+    "build": "npm run build:clean && babel src -d dist --ignore *.spec.*",
+    "perpare": "npm run build",
+    "preflow": "if [ ! -d \"flow-typed\" ]; then flow-typed install jest@22.4.2; fi",
+    "flow": "flow",
+    "lint:eslint": "eslint --ignore-path .gitignore",
+    "lint:js": "npm run lint:eslint -- ./src",
+    "lint": "npm run lint:js",
+    "test:clean": "rimraf ./coverage",
+    "pretest": "npm run test:clean && npm run lint && npm run flow",
+    "test": "NODE_ENV=test jest --coverage ./src"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-plugin-dynamic-import-node": "^1.2.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-flow": "^6.23.0",
+    "eslint": "^4.18.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "flow-bin": "^0.66.0",
+    "flow-typed": "^2.3.0",
+    "jest": "22.4.2",
+    "prettier": "^1.10.2",
+    "rimraf": "^2.6.2"
+  }
+}
