@@ -15,10 +15,16 @@
     "flow": "flow",
     "lint:eslint": "eslint --ignore-path .gitignore",
     "lint:js": "npm run lint:eslint -- ./src",
+    "lint:fix": "npm run lint:js -- --fix",
     "lint": "npm run lint:js",
+    "lint:staged": "lint-staged",
     "test:clean": "rimraf ./coverage",
     "pretest": "npm run test:clean && npm run lint && npm run flow",
-    "test": "NODE_ENV=test jest --coverage ./src"
+    "test": "NODE_ENV=test jest --coverage ./src",
+    "precommit": "npm run lint:staged"
+  },
+  "lint-staged": {
+    "*.js": "npm run lint"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -30,7 +36,9 @@
     "eslint-plugin-prettier": "^2.6.0",
     "flow-bin": "^0.66.0",
     "flow-typed": "^2.3.0",
+    "husky": "^0.14.3",
     "jest": "22.4.2",
+    "lint-staged": "^7.2.2",
     "prettier": "^1.10.2",
     "rimraf": "^2.6.2"
   }
