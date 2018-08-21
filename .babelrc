@@ -1,4 +1,3 @@
 {
-  "plugins": ["dynamic-import-node"],
-  "presets": ["env", "flow"]
+  "presets": ["latest", "flow"]
 }
