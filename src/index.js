@@ -1,3 +1,4 @@
+//@flow
 const foo = (bar: string) => {
   return bar
 }

@@ -1,3 +1,4 @@
+//@flow
 import foo from './'
 
 describe('foo', function() {
