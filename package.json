@@ -10,7 +10,7 @@
   "scripts": {
     "build:clean": "rimraf ./dist",
     "build": "npm run build:clean && babel src -d dist --ignore *.spec.*",
-    "perpare": "npm run build",
+    "prepare": "npm run build",
     "preflow": "if [ ! -d \"flow-typed\" ]; then flow-typed install jest@22.4.2; fi",
     "flow": "flow",
     "lint:eslint": "eslint --ignore-path .gitignore",
