@@ -21,6 +21,7 @@
     "test:clean": "rimraf ./coverage",
     "pretest": "npm run test:clean && npm run lint && npm run flow",
     "test": "NODE_ENV=test jest --coverage ./src",
+    "test:debug": "NODE_ENV=test node --inspect node_modules/.bin/jest --runInBand",
     "precommit": "npm run lint:staged"
   },
   "lint-staged": {
@@ -40,5 +41,10 @@
     "lint-staged": "^7.2.2",
     "prettier": "^1.10.2",
     "rimraf": "^2.6.2"
+  },
+  "jest": {
+    "verbose": true,
+    "//": "https://github.com/jsdom/jsdom/issues/2304#issuecomment-408327115",
+    "testURL": "http://localhost/"
   }
 }
